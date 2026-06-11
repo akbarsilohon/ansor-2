@@ -9,3 +9,13 @@ function an_part( $file ){
     $path = get_template_part( $file );
     return $path;
 }
+
+// Asset Theme Image Default ========================
+define('an_logo', an_uri . '/assets/img/logo.png');
+
+
+
+// Function required ================================
+require_once 'core/support.php';
+require_once 'core/deregister.php';
+require_once 'core/scripts.php';
