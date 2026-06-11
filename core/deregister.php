@@ -31,3 +31,17 @@ function mywptheme_child_deregister_styles() {
 
 remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
 remove_action( 'wp_head', 'rsd_link' );
+
+
+function ansor_inject_ajax_url() {
+    ?>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var ansor_ajax = {
+            "ajax_url": "<?php echo esc_url( admin_url('admin-ajax.php') ); ?>"
+        };
+        /* ]]> */
+    </script>
+    <?php
+}
+add_action('wp_head', 'ansor_inject_ajax_url', 5);

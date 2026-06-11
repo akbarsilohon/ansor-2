@@ -60,3 +60,24 @@ add_filter('excerpt_more', function(){
 add_filter('excerpt_length', function(){
     return 25;
 });
+
+
+// render categroy text ============================
+function ansor_cat_text(){
+    $categories = get_the_category();
+    $sparator = ', ';
+    $output = '';
+    $i = 1;
+
+    if(!empty($categories)){
+        foreach( $categories as $category ){
+            if( $i > 1 ){
+                $output .= $sparator;
+            }
+
+            $output = esc_html( $category->name );
+        }
+    }
+
+    echo $output;
+}
