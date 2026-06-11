@@ -36,3 +36,27 @@ add_action('do_feed_rss2', 'ansor_disable_feed', 1);
 add_action('do_feed_atom', 'ansor_disable_feed', 1);
 add_action('do_feed_rss2_comments', 'ansor_disable_feed', 1);
 add_action('do_feed_atom_comments', 'ansor_disable_feed', 1);
+
+
+
+// Generate Post thumbnails ========================
+function gp_ansor_thumbnail( $id, $size, $loading, $class ){
+    $thumbnail = null;
+    if( has_post_thumbnail( $id )){
+        $thumbnail = the_post_thumbnail( $size, array(
+            'class'     =>  $class,
+            'loading'   =>  $loading
+        ));
+    }
+    return $thumbnail;
+}
+
+
+// Excerpt more =======================
+add_filter('excerpt_more', function(){
+    return '..';
+});
+
+add_filter('excerpt_length', function(){
+    return 25;
+});

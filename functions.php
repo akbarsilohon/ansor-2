@@ -12,6 +12,9 @@ function an_part( $file ){
 
 // Asset Theme Image Default ========================
 define('an_logo', an_uri . '/assets/img/logo.png');
+define('an_fav', an_uri . '/assets/img/icon.png');
+define('an_cover', an_uri . '/assets/img/cover.webp');
+define('an_home_icon', an_uri . '/assets/img/home-icon.png');
 
 
 
@@ -19,3 +22,12 @@ define('an_logo', an_uri . '/assets/img/logo.png');
 require_once 'core/support.php';
 require_once 'core/deregister.php';
 require_once 'core/scripts.php';
+
+// Admin Panel ======================================
+require_once 'app/admin/index.php';
+
+
+// Custom post Gallery ==============================
+require_once 'app/gallery/index.php';
+require_once 'app/pengurus/index.php';
+require_once 'app/program/index.php';
