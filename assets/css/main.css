@@ -1060,6 +1060,91 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+/* ================ FAQs ====================== */
+.ansor_faq_wrapper {
+    max-width: 800px;
+    margin: 3rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.faq_item {
+    background-color: #ffffff;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq_item:hover {
+    border-color: rgba(5, 102, 71, 0.2);
+    box-shadow: 0 4px 12px rgba(5, 102, 71, 0.04);
+}
+
+.faq_item.active {
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px rgba(5, 102, 71, 0.06);
+}
+
+.faq_trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--contrast);
+    transition: color 0.25s ease;
+}
+
+.faq_trigger i {
+    font-size: 14px;
+    color: var(--base-2);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease;
+    flex-shrink: 0;
+}
+
+.faq_item.active .faq_trigger {
+    color: var(--accent);
+}
+
+.faq_item.active .faq_trigger i {
+    transform: rotate(180deg);
+    color: var(--accent);
+}
+
+.faq_panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(5, 102, 71, 0.01);
+}
+
+.faq_content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--base-2);
+    border-top: 1px solid rgba(5, 102, 71, 0.05);
+    padding-top: 1.25rem;
+}
+
+.faq_content p {
+    margin: 0;
+}
+
+
+
 
 
 /* ============== Site Footer ================= */

@@ -4,7 +4,7 @@
             
             <div class="footer_col">
                 <h3 class="footer_title">Kantor Manajemen</h3>
-                <p class="footer_text">Jln RA. Kartini No. 26a - SAPEKEN - JAWA TIMUR</p>
+                <p class="footer_text">Kompleks Gedung PCNU Kabupaten Pati, Jalan Dr. Susanto No. 11, Pati, Jawa Tengah.</p>
                 <div class="footer_info_block">
                     <span class="info_label">Jam Kantor</span>
                     <p class="footer_text">Senin - Jumat 07.30 - 17.00 WIB</p>
