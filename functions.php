@@ -26,9 +26,10 @@ require_once 'core/ajax.php';
 
 // Admin Panel ======================================
 require_once 'app/admin/index.php';
+require_once 'app/widgets/index.php';
 
 
-// Custom post Gallery ==============================
+// Custom post CPT ==============================
 require_once 'app/gallery/index.php';
 require_once 'app/pengurus/index.php';
 require_once 'app/program/index.php';

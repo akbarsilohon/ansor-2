@@ -81,3 +81,47 @@ function ansor_cat_text(){
 
     echo $output;
 }
+
+// Render category with link =======================
+function ansor_cat_html_support( $class ){
+    $categories = get_the_category();
+    $sparator = ', ';
+    $output = '';
+    $i = 1;
+
+    if(!empty($categories)){
+        foreach( $categories as $category ){
+            if( $i > 1 ){
+                $output .= $sparator;
+            }
+            $output = '<a class="'. $class .'" href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="'. esc_html( $category->name ) .'">' . esc_html( $category->name ) . '</a>';
+        }
+    }
+
+    return $output;
+}
+
+
+// Fungsi penabahan value pada popular post ==========
+function ansor_pati_value_post_popular( $postID ){
+    $metaKey = 'ansor_post_views';
+    $views = get_post_meta( $postID, $metaKey, true );
+    $count = ( empty( $views ) ? 0 : $views );
+    $count++;
+
+    update_post_meta( $postID, $metaKey, $count );
+}
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+
+
+// Estimasi timer baca ======================
+function ansor_estimasi_waktu_baca() {
+    $content = get_the_content();
+    $clean_content = strip_shortcodes($content);
+    $clean_content = strip_tags($clean_content);
+    $word_count = str_word_count($clean_content);
+    
+    $reading_time = ceil($word_count / 150);
+    
+    return $reading_time . ' Menit';
+}
