@@ -1,0 +1,73 @@
+.gritemp {
+    font-family: "Roboto", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.form-group-meta {
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.form-group-meta label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #3c4245;
+}
+
+.form-group-meta input[type="text"],
+.form-group-meta input[type="email"],
+.form-group-meta input[type="url"],
+.form-group-meta textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #2c3338;
+    background-color: #ffffff;
+    border: 1px solid #8c8f94;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group-meta textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.form-group-meta input:focus,
+.form-group-meta textarea:focus {
+    border-color: #056647;
+    box-shadow: 0 0 0 1px #056647;
+    outline: 2px solid transparent;
+}
+
+.form-group-meta input::placeholder,
+.form-group-meta textarea::placeholder {
+    color: #a7aaad;
+    opacity: 1;
+}
+
+/* Penanganan Khusus Kolom Bio agar Memanjang Penuh (Full Width) di bawah Grid */
+.form-group-meta.full-width {
+    grid-column: span 2;
+}
+
+@media (max-width: 782px) {
+    .gritemp {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form-group-meta.full-width {
+        grid-column: span 1;
+    }
+}

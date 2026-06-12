@@ -54,3 +54,28 @@ function ansor_add_dropdown_icon( $title, $item, $args, $depth ) {
     return $title;
 }
 add_filter( 'nav_menu_item_title', 'ansor_add_dropdown_icon', 10, 4 );
+
+
+// Register css for Custom post ===================================
+add_action('admin_enqueue_scripts', function( $hook ){
+    if ( ! in_array($hook, array('post.php', 'post-new.php')) ) {
+        return;
+    }
+
+    $screen = get_current_screen();
+    if ( ! $screen ) {
+        return;
+    }
+
+    $allowed_post_types = array('pengurus');
+    if ( in_array($screen->post_type, $allowed_post_types) ) {
+        wp_enqueue_style( 'ansor-google-font', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap', array(), null, 'all' );
+        wp_enqueue_style(
+            'admin-custom-post-css',
+            an_uri . '/assets/css/post-cpt.css',
+            array(), 
+            fileatime( an_dir . '/assets/css/post-cpt.css'), 
+            'all'
+        );
+    }
+});

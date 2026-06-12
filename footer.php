@@ -38,7 +38,6 @@
             <div class="footer_col">
                 <h3 class="footer_title">Navigasi</h3>
                 <ul class="footer_links">
-                    <li><a href="#">Donasi</a></li>
                     <li><a href="#">Laporan & Publikasi</a></li>
                     <li><a href="#">Berita</a></li>
                     <li><a href="#">Relawan</a></li>
