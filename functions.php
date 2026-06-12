@@ -23,6 +23,7 @@ require_once 'core/support.php';
 require_once 'core/deregister.php';
 require_once 'core/scripts.php';
 require_once 'core/ajax.php';
+require_once 'core/user.php';
 
 // Admin Panel ======================================
 require_once 'app/admin/index.php';
