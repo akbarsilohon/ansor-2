@@ -44,6 +44,16 @@
                     </article>
                 <?php endwhile; ?>
             </div>
+
+            <?php if ( $galeri_query->max_num_pages > 1 ) { ?>
+                <br><br>
+                <center>
+                    <a href="<?php echo home_url('galeri-all'); ?>" class="hero-btn">
+                        Lihat Semua
+                    </a>
+                </center>
+                <?php
+            } ?>
         <?php else : ?>
             <center><p>Belum ada dokumentasi galeri kegiatan yang ditambahkan.</p></center>
         <?php 

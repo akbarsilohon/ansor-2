@@ -66,15 +66,15 @@
                 <?php endwhile; ?>
             </div>
             
-            <?php 
-            echo paginate_links(array(
-                'total'   => $program_query->max_num_pages,
-                'current' => $paged,
-                'type'    => 'list',
-                'prev_text' => '<i class="fa-solid fa-chevron-left"></i>',
-                'next_text' => '<i class="fa-solid fa-chevron-right"></i>',
-            ));
-            ?>
+            <?php if( $program_query->max_num_pages > 1 ){ ?>
+                <br><br>
+                <center>
+                    <a href="<?php echo home_url('program'); ?>" class="hero-btn">
+                        Lihat Semua
+                    </a>
+                </center>
+                <?php
+            } ?>
         <?php else : ?>
             <center><p>Belum ada program kerja yang ditambahkan.</p></center>
         <?php 
