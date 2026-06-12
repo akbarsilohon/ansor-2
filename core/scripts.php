@@ -67,7 +67,7 @@ add_action('admin_enqueue_scripts', function( $hook ){
         return;
     }
 
-    $allowed_post_types = array('pengurus');
+    $allowed_post_types = array('pengurus', 'galeri', 'program_kerja');
     if ( in_array($screen->post_type, $allowed_post_types) ) {
         wp_enqueue_style( 'ansor-google-font', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap', array(), null, 'all' );
         wp_enqueue_style(
