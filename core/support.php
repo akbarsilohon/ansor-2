@@ -125,3 +125,27 @@ function ansor_estimasi_waktu_baca() {
     
     return $reading_time . ' Menit';
 }
+
+
+// Insert HTML Header =================================
+add_action('wp_head', 'ansor_insert_html_to_header', 1);
+function ansor_insert_html_to_header(){
+    $option = get_option( 'gp_ansor', []);
+    $headerHTML = isset($option['html_header']) && !empty($option['html_header']) ? $option['html_header'] : '';
+
+    if( !empty( $headerHTML )){
+        echo $headerHTML;
+    }
+}
+
+
+// Insert HTML Footer =================================
+add_action('wp_footer', 'ansor_insert_html_to_footer');
+function ansor_insert_html_to_footer(){
+    $option = get_option( 'gp_ansor', []);
+    $footerHTML = isset($option['html_footer']) && !empty($option['html_footer']) ? $option['html_footer'] : '';
+
+    if( !empty( $footerHTML )){
+        echo $footerHTML;
+    }
+}

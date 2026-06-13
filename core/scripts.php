@@ -79,3 +79,32 @@ add_action('admin_enqueue_scripts', function( $hook ){
         );
     }
 });
+
+// Load css for Ansor page settings =================
+add_action( 'admin_enqueue_scripts', function(){
+    $allowed = ['ansor', 'ansor_hero', 'ansor_vm', 'ansor_faqs', 'ansor_footer'];
+    if(isset( $_GET['page'] ) && in_array( $_GET['page'], $allowed )){
+        wp_enqueue_media();
+        wp_enqueue_style(
+            'ansor-fontawesome',
+            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css',
+            array(),
+            null,
+            'all'
+        );
+        wp_enqueue_style(
+            'ansor-admin',
+            an_uri . '/assets/css/admin.css',
+            array(),
+            fileatime( an_dir . '/assets/css/admin.css'),
+            'all'
+        );
+        wp_enqueue_script(
+            'ansor-admin-script',
+            an_uri . '/assets/js/admin.js',
+            array(),
+            fileatime( an_dir . '/assets/js/admin.js'),
+            true
+        );
+    }
+});

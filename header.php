@@ -30,7 +30,11 @@
                     ); ?>
             </div>
             <div class="hide_destop">
-                <a href="#" class="ansor_action">Kontak Kami</a>
+                <?php 
+                $btnText = isset( $option['btn_header_text']) && !empty($option['btn_header_text']) ? $option['btn_header_text'] : 'Konta Kami';
+                $btnUrl = isset( $option['btn_header_url']) && !empty($option['btn_header_url']) ? $option['btn_header_url'] : '#';
+                ?>
+                <a href="<?php echo esc_url( $btnUrl ); ?>" class="ansor_action"><?php echo esc_html( $btnText ); ?></a>
                 <span class="menu_open">
                     <i class="fa-solid fa-bars"></i>
                 </span>
