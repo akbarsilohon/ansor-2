@@ -1,7 +1,7 @@
 <?php
 
 define('an_name', 'GP Ansor');
-define('an_ver', '1.2.1');
+define('an_ver', '1.2.2');
 
 define('an_uri', get_template_directory_uri());
 define('an_dir', get_template_directory());

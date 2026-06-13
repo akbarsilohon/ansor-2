@@ -13,3 +13,5 @@ add_action('admin_menu', function(){
 require_once 'pages/root.php';
 require_once 'pages/hero.php';
 require_once 'pages/visi-misi.php';
+require_once 'pages/faqs.php';
+require_once 'pages/footer.php';
